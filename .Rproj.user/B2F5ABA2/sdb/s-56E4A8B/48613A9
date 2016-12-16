@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#####Make the plots\nrm(list=ls())\n\n#########density plot\nload(\"data/harness/Xpredictions.RData\")\nsource(\"r/harness/Functions.R\")\n\n##find the differences\nnames(df)\nstroke<-data.frame(df[c(1:19)], \n                   apply(df[20:44],2,diffs))\nstroke<-stroke[complete.cases(stroke),]\n\ndf$energy_96_60<-df$peak_96_60*3.8\ndf$energy_96_90<-df$peak_96_90*3.8\n\ndf$energy.diff<-df$energy_96_60-df$energy_96_90\n\nhist(df$energy.diff)\n\npar(mfrow = c(1,2))\nhist(df$energy_96_60, breaks = 10)\nhist(df$energy_96_90, breaks = 10)\n\n#####Make the plots\nrm(list=ls())\n\n#########tape data\nload(\"data/tape/Xpredictions.RData\")\nsource(\"r/tape/Functions.R\")\n\n##add animal info and actual number of strokes to the data frame\ndat<-read.csv(\"data/tape/odba_vo2_data.csv\")\npredictions<-merge(predictions,dat[,c(2,18:23)],all.x = TRUE, by = \"id2\")\npredictions<-predictions[!predictions$id2==\"Rocky31-10-14_1.csv\",]\npredictions<-predictions[complete.cases(predictions$stroke_rate),]\npredictions$name<-droplevels(predictions$name)\n\n\n##find the differences\nnames(predictions)\nstroke<-data.frame(predictions[c(1,27:32)], \n                   apply(predictions[2:26],2,diffs))\nstroke<-stroke[complete.cases(stroke),]\n\n##calculate \"actual\" amount of energy expended over a dive\npredictions$energy_actual <- predictions$stroke_rate*3.8\n\n#calculate predicted energy expended\npredictions$energy_3sec_10 <- predictions$peak_3sec_10_dyn.x*3.8\npredictions$energy_3sec_20 <- predictions$peak_3sec_20_dyn.x*3.8\npredictions$energy_3sec_30 <- predictions$peak_3sec_30_dyn.x*3.8\npredictions$energy_3sec_40 <- predictions$peak_3sec_40_dyn.x*3.8\npredictions$energy_3sec_50 <- predictions$peak_3sec_50_dyn.x*3.8\n\npredictions$energy_diff_10 <- predictions$energy_actual - predictions$energy_3sec_10\npredictions$energy_diff_20 <- predictions$energy_actual - predictions$energy_3sec_20\npredictions$energy_diff_30 <- predictions$energy_actual - predictions$energy_3sec_30\npredictions$energy_diff_40 <- predictions$energy_actual - predictions$energy_3sec_40\npredictions$energy_diff_50 <- predictions$energy_actual - predictions$energy_3sec_50\n\n\nh.plot<-hist(predictions$energy_diff_50)\n\n\ntiff(\"figs/tape/energy_dist_tape.tiff\", width = 140, height = 90, units = 'mm',\n     res = 300, compression = 'lzw')\n\npar(mfrow = c(2,2),mar = c(1,3.5,1,1))\nhist(predictions$energy_diff_20, main=\"\", xlab = \"\", ylab = \"\",\n     axes = FALSE, ylim = c(0,55),xlim = c(-350,100))\naxis(2, line = -0.45,cex.axis = 1, mgp = c(1,0.5,0))\nmtext(\"Frequency\", 2, 1.5)\ntext(100, 50, \"A\")\npar(mar = c(1,2.5,1,1))\nhist(predictions$energy_diff_30, main=\"\", xlab = \"\", ylab = \"\",\n     axes = FALSE, ylim = c(0,55),xlim = c(-350,100))\naxis(2, line = -0.45, cex.axis = 1, mgp = c(1,0.5,0))\ntext(100, 50, \"B\")\npar(mar = c(2.5,3.5,0,1))\nhist(predictions$energy_diff_40, main=\"\", xlab = \"\", ylab = \"\",\n     xlim = c(-350,100), ylim = c(0,55), axes = FALSE)\naxis(1, line = -0.2, mgp = c(1,0.5,0))\naxis(2, line = -0.45, mgp = c(1,0.5,0))\nmtext(\"Frequency\", 2, 1.5)\nmtext(\"Energy (kj)\",1,1.5)\ntext(100, 50, \"C\")\npar(mar = c(2.5,2.5,0,1))\nhist(predictions$energy_diff_50, main=\"\", xlab = \"\", ylab = \"\",\n     xlim = c(-350,100), ylim = c(0,55), axes = FALSE)\naxis(1, line = -0.2, mgp = c(1,0.5,0))\naxis(2, line = -0.45)\nmtext(\"Energy (kj)\",1,1.5)\ntext(100, 50, \"D\")\n\ndev.off()",
+    "created" : 1481842764303.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1587569024",
+    "id" : "48613A9",
+    "lastKnownWriteTime" : 1481851278,
+    "last_content_update" : 1481853977973,
+    "path" : "~/Stroke rate methods/R/energy_diffs.R",
+    "project_path" : "R/energy_diffs.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
