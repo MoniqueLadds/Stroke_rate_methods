@@ -71,18 +71,19 @@ for(l in 1:length(indiv)){
 
 
 
-tiff("figs/tape/tape_xhist.tiff",width = 600, height = 400)
+tiff("figs/tape/tape_xhist.tiff",width = 180, height = 100, units = 'mm',
+     res = 300, compression = 'lzw')
 
 #make the histogram
 #extract the data
 plotData <- stroke$peak_0.4sec_30_dyn.x 
 par(mar=c(3.5,3.5,1,1))
 h<-hist(plotData, breaks=10,border="white", 
-        xlab="",ylab = "",main="",cex.axis = 1.5,
+        xlab="",ylab = "",main="",
         ylim=c(0,30),xlim=c(-30,50)) 
-text(50,30,"A",cex=1.5)
-mtext("Predicitons",1,2,cex = 1.5)
-mtext("Frequency",2,2.2,cex = 1.5)
+text(50,30,"A")
+mtext("Predicitons",1,2)
+mtext("Frequency",2,2.2)
 ###function for the additional lines
 density_lines<-function(lineData,col){
   xfit<-seq(min(lineData),max(lineData),length=40) 
@@ -168,7 +169,7 @@ density_lines(lineData, "violetred4")
 
 
 
-legend(-32,30,lty=c(1,1),cex=0.8,bty="n",bg="n",
+legend(-33,30,lty=c(1,1),cex=0.8,bty="n",bg="n",
        c(#"RM:0.4; G:10",
          "RM:0.4; G:20",
          "RM:0.4; G:30",

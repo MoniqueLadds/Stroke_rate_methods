@@ -70,15 +70,16 @@ for(l in 1:length(indiv)){
 
 
 #make the histogram
-tiff("figs/tape/tape_zhist.tiff",width = 600, height = 400)
+tiff("figs/tape/tape_zhist.tiff",width = 180, height = 100, units = 'mm',
+     res = 300, compression = 'lzw')
 
 
 #extract the data
 plotData <- stroke$peak_0.4sec_30_dyn.z 
 par(mar=c(3.5,3.5,1,1))
 h<-hist(plotData, breaks=10,border="white", xlab="",ylab = "",main="",
-        ylim=c(0,30),xlim=c(-30,50)) 
-text(50,30,"B",cex=1.5)
+        ylim=c(0,31),xlim=c(-30,50)) 
+text(50,30,"B")
 mtext("Predicitons",1,2)
 mtext("Frequency",2,2.2)
 ###function for the additional lines

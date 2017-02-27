@@ -49,19 +49,21 @@ percent.diff$diff[which(percent.diff$diff==Inf)]<-0
 avg.diff<-mean(percent.diff$diff)
 
 
-tiff("figs/harness/zhist.tiff",width = 600, height = 400)
-
 #make the histogram
+tiff("figs/harness/harness_zhist.tiff",width = 180, height = 100, units = 'mm',
+     res = 300, compression = 'lzw')
+
+
 #extract the data
 plotData <- stroke$peak_13_60 
 
-par(mar=c(4,4,1,1))
+par(mar = c(3.5,3.5,1,1))
 h<-hist(plotData, breaks=10,border="white", 
-        xlab="", ylab = "", main="", cex.axis = 1.5,
+        xlab="", ylab = "", main="",
         ylim=c(0,10),xlim=c(-30,30)) 
-mtext("Frequency",2,2.2,cex = 1.5)
-mtext("Predicitions",1,2, cex = 1.5)
-text(30,10,"F",cex=1.5)
+mtext("Frequency",2,2.2)
+mtext("Predicitions",1,2)
+text(30,10,"F")
 
 
 ###function for the additional lines
