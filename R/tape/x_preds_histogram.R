@@ -17,8 +17,8 @@ predictions$name<-droplevels(predictions$name)
 names(predictions)
 stroke<-data.frame(predictions[c(1,27:32)], 
                    apply(predictions[2:26],2,diffs))
+stroke<-stroke[stroke$stroke_rate>0,]
 stroke<-stroke[complete.cases(stroke),]
-
 
     ###Summarise the differences
     summary.x<-apply(X = stroke[7:32],2,summary)
@@ -30,7 +30,7 @@ stroke<-stroke[complete.cases(stroke),]
 
     t.test(stroke$peak_0.4sec_40_dyn.x,mu=0)$p.value
     
-export.x<-cbind(mean.x,sd.x,median.x,range.x,ztest.x)
+export.x<-cbind(mean.x,sd.x,median.x,range.x,ttest.x)
 write.csv(export.x,"data/tape/summarystatsX.csv")
 
 

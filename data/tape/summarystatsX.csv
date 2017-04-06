@@ -1,26 +1,27 @@
-"","mean.x","sd.x","median.x","range.x","ztest.x"
-"peak_13_60",-7.71428571428571,4.46747505122674,-7,18,-13.9427400463467
-"peak_13_70",-9.73469387755102,4.93193467027258,-9,20,-17.5944100584851
-"peak_13_80",-11.1224489795918,5.21868698788795,-9,21,-20.1026278446004
-"peak_13_90",-12.0816326530612,5.3026594534169,-11,20,-21.8362489614742
-"peak_13_100",-12.9387755102041,5.40989896418788,-12,20,-23.3854422999572
-"peak_32_60",-0.0408163265306122,5.11517018156723,1,20,-0.0737711113563317
-"peak_32_70",-2.93877551020408,4.47403696930648,-3,19,-5.31152001765589
-"peak_32_80",-5.22448979591837,4.28303487670857,-4,18,-9.44270225361046
-"peak_32_90",-6.59183673469388,4.182893572571,-6,17,-11.9140344840476
-"peak_32_100",-8.18367346938776,4.2898789288848,-8,18,-14.7911078269445
-"peak_64_60",6.93877551020408,6.41095469770723,7,25,12.5410889305764
-"peak_64_70",3.83673469387755,5.97336776441729,4,22,6.93448446749518
-"peak_64_80",1.40816326530612,5.52991247424307,2,20,2.54510334179345
-"peak_64_90",-0.510204081632653,5.29985239173221,0,20,-0.922138891954147
-"peak_64_100",-2.42857142857143,5.00832640043891,-2,19,-4.38938112570174
-"peak_96_60",8.91836734693878,6.83385181374639,10,27,16.1189878313585
-"peak_96_70",5.97959183673469,6.4339263411439,6,25,10.8074678137026
-"peak_96_80",3.53061224489796,6.19846096763922,3,23,6.3812011323227
-"peak_96_90",1.71428571428571,6.12372435695795,2,23,3.09838667696593
-"peak_96_100",-0.102040816326531,5.54243064142132,0,20,-0.184427778390829
-"peak_128_60",9.61224489795918,7.23652865252225,9,28,17.3730967244161
-"peak_128_70",6.6734693877551,7.01304663675151,6,28,12.0615767067602
-"peak_128_80",4.30612244897959,6.73054010225236,4,26,7.782852248093
-"peak_128_90",2.44897959183673,6.45516984184575,3,24,4.4262666813799
-"peak_128_100",0.428571428571429,6.03462233007722,2,25,0.774596669241483
+"","mean.x","sd.x","median.x","range.x","ttest.x"
+"stroke_rate",26.7323943661972,5.37974440837075,27,25,list(statistic = 41.8702342763177, parameter = 70, p.value = 2.72915267114096e-51, conf.int = c(25.4590296398717, 28.0057590925227), estimate = 26.7323943661972, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_0.4sec_10_dyn.x",79.6338028169014,27.8286796753789,77,125,list(statistic = 24.1120440268846, parameter = 70, p.value = 1.24675534054364e-35, conf.int = c(73.0468618046666, 86.2207438291362), estimate = 79.6338028169014, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_0.4sec_20_dyn.x",22.887323943662,11.9266200406302,22,54,list(statistic = 16.1698803851817, parameter = 70, p.value = 2.45959020657369e-25, conf.int = c(20.0643390374656, 25.7103088498583), estimate = 22.887323943662, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_0.4sec_30_dyn.x",5.49295774647887,7.64175230360274,5,39,list(statistic = 6.05678944183251, parameter = 70, p.value = 6.21807092346523e-08, conf.int = c(3.68418448662226, 7.30173100633548), estimate = 5.49295774647887, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_0.4sec_40_dyn.x",-2.61971830985915,5.65777896145298,-2,26,list(statistic = -3.90155553845405, parameter = 70, p.value = 0.000217073948411916, conf.int = c(-3.95889274120401, -1.2805438785143), estimate = -2.61971830985915, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_0.4sec_50_dyn.x",-5.8169014084507,5.30851030799987,-4,21,list(statistic = -9.23311430883773, parameter = 70, p.value = 9.89626217077994e-14, conf.int = c(-7.07340529830546, -4.56039751859595), estimate = -5.8169014084507, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_1sec_10_dyn.x",76.2112676056338,27.3813886181095,74,123,list(statistic = 23.452702279094, parameter = 70, p.value = 7.03224769221826e-35, conf.int = c(69.7301986593361, 82.6923365519315), estimate = 76.2112676056338, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_1sec_20_dyn.x",26.6760563380282,13.8200420175993,24,67,list(statistic = 16.2645269656686, parameter = 70, p.value = 1.779185540349e-25, conf.int = c(23.4049057617731, 29.9472069142832), estimate = 26.6760563380282, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_1sec_30_dyn.x",7.05633802816901,9.07884090138582,7,39,list(statistic = 6.54904758452549, parameter = 70, p.value = 8.20581750793579e-09, conf.int = c(4.90741144686944, 9.20526460946859), estimate = 7.05633802816901, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_1sec_40_dyn.x",-1.85915492957746,6.25481705715771,-2,32,list(statistic = -2.50455253047441, parameter = 70, p.value = 0.0145924715396348, conf.int = c(-3.33964597257399, -0.378663886580942), estimate = -1.85915492957746, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_1sec_50_dyn.x",-5.12676056338028,5.66928964425196,-4,26,list(statistic = -7.61979984600984, parameter = 70, p.value = 9.14968214338768e-11, conf.int = c(-6.46865952889248, -3.78486159786809), estimate = -5.12676056338028, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_2sec_10_dyn.x",55.9154929577465,19.7265205670461,53,80,list(statistic = 23.8842078967559, parameter = 70, p.value = 2.25713224575801e-35, conf.int = c(51.2463017180798, 60.5846841974132), estimate = 55.9154929577465, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_2sec_20_dyn.x",26.9295774647887,13.6154575429777,26,57,list(statistic = 16.6658118047379, parameter = 70, p.value = 4.56301665452408e-26, conf.int = c(23.706851243626, 30.1523036859514), estimate = 26.9295774647887, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_2sec_30_dyn.x",9.25352112676056,10.5298464374356,8,48,list(statistic = 7.40481405940853, parameter = 70, p.value = 2.27093921129005e-10, conf.int = c(6.76114713847379, 11.7458951150473), estimate = 9.25352112676056, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_2sec_40_dyn.x",-1.14084507042254,6.52751489498303,-1,34,list(statistic = -1.47267858994218, parameter = 70, p.value = 0.145320047719009, conf.int = c(-2.6858826385461, 0.404192497701033), estimate = -1.14084507042254, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_2sec_50_dyn.x",-4.67605633802817,5.53888758271221,-4,23,list(statistic = -7.11354951037704, parameter = 70, p.value = 7.75165620006605e-10, conf.int = c(-5.98708963915183, -3.3650230369045), estimate = -4.67605633802817, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_3sec_10_dyn.x",52.7887323943662,18.9011832531781,49,77,list(statistic = 23.5332232661288, parameter = 70, p.value = 5.6814995812157e-35, conf.int = c(48.3148953096598, 57.2625694790726), estimate = 52.7887323943662, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_3sec_20_dyn.x",20.9718309859155,12.4945380420931,20,59,list(statistic = 14.1431230438242, parameter = 70, p.value = 3.31161515881143e-22, conf.int = c(18.0144220819205, 23.9292398899105), estimate = 20.9718309859155, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_3sec_30_dyn.x",7.80281690140845,9.35890671012662,6,47,list(statistic = 7.02514790459429, parameter = 70, p.value = 1.12388578654585e-09, conf.int = c(5.58759982471927, 10.0180339780976), estimate = 7.80281690140845, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_3sec_40_dyn.x",-0.436619718309859,6.60893852373154,-1,39,list(statistic = -0.55667383305053, parameter = 70, p.value = 0.579525716911987, conf.int = c(-2.00092994492189, 1.12769050830218), estimate = -0.436619718309859, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_3sec_50_dyn.x",-4.36619718309859,5.3351648431347,-3,24,list(statistic = -6.89580031465217, parameter = 70, p.value = 1.93315189920818e-09, conf.int = c(-5.62901009848706, -3.10338426771012), estimate = -4.36619718309859, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_4sec_10_dyn.x",51.0845070422535,18.550892530606,48,84,list(statistic = 23.2035039131807, parameter = 70, p.value = 1.36566938924905e-34, conf.int = c(46.6935824188508, 55.4754316656563), estimate = 51.0845070422535, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_4sec_20_dyn.x",18.5211267605634,11.764181903351,18,56,list(statistic = 13.2658428214237, parameter = 70, p.value = 8.80984123688826e-21, conf.int = c(15.7365903341683, 21.3056631869585), estimate = 18.5211267605634, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_4sec_30_dyn.x",5.3943661971831,8.8114841837869,3,45,list(statistic = 5.15846553892241, parameter = 70, p.value = 2.21751375702209e-06, conf.int = c(3.30872191847896, 7.48001047588724), estimate = 5.3943661971831, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_4sec_40_dyn.x",-1.1830985915493,6.02686807828062,-2,33,list(statistic = -1.65408729697504, parameter = 70, p.value = 0.102587588964981, conf.int = c(-2.60963499152368, 0.243437808425087), estimate = -1.1830985915493, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")
+"peak_4sec_50_dyn.x",-4.05633802816901,5.30737310310225,-3,23,list(statistic = -6.43996777539619, parameter = 70, p.value = 1.28928926571814e-08, conf.int = c(-5.31257274601608, -2.80010331032195), estimate = -4.05633802816901, null.value = 0, alternative = "two.sided", method = "One Sample t-test", data.name = "newX[, i]")

@@ -12,13 +12,13 @@ stroke<-data.frame(df[c(1:19)],
 stroke<-stroke[complete.cases(stroke),]
 
 ##calculate "actual" amount of energy expended over a dive
-df$energy_actual <- df$strokes*3.8
+df$energy_actual <- df$strokes*7.9
 
-df$energy_96_60<-df$peak_96_60*3.8
-df$energy_96_70<-df$peak_96_70*3.8
-df$energy_96_80<-df$peak_96_80*3.8
-df$energy_96_90<-df$peak_96_90*3.8
-df$energy_96_100<-df$peak_96_100*3.8
+df$energy_96_60<-df$peak_96_60*7.9
+df$energy_96_70<-df$peak_96_70*7.9
+df$energy_96_80<-df$peak_96_80*7.9
+df$energy_96_90<-df$peak_96_90*7.9
+df$energy_96_100<-df$peak_96_100*7.9
 
 df$energy.diff_60<-df$energy_actual-df$energy_96_60
 df$energy.diff_70<-df$energy_actual-df$energy_96_70
@@ -32,30 +32,30 @@ tiff("figs/harness/energy_dist_harness.tiff", width = 140, height = 90, units = 
 
 par(mfrow = c(2,2),mar = c(1,3.5,1,1))
 hist(df$energy.diff_60, main="", xlab = "", ylab = "",
-     axes = FALSE, ylim = c(0,10),xlim = c(-80,50))
+     axes = FALSE, ylim = c(0,10),xlim = c(-250,100), breaks = 10)
 axis(2, line = -0.45,cex.axis = 1, mgp = c(1,0.5,0))
 mtext("Frequency", 2, 1.5)
-text(40, 10, "A")
+text(90, 15, "A")
 par(mar = c(1,2.5,1,1))
 hist(df$energy.diff_70, main="", xlab = "", ylab = "",
-     axes = FALSE,ylim = c(0,10),xlim = c(-80,50))
+     axes = FALSE,ylim = c(0,10),xlim = c(-250,100), breaks = 10)
 axis(2, line = -0.45, cex.axis = 1, mgp = c(1,0.5,0))
-text(40, 10, "B")
+text(90, 15, "B")
 par(mar = c(2.5,3.5,0,1))
 hist(df$energy.diff_80, main="", xlab = "", ylab = "",
-     ylim = c(0,10),xlim = c(-80,50), axes = FALSE)
+     ylim = c(0,10),xlim = c(-250,100), axes = FALSE)
 axis(1, line = -0.3, mgp = c(1,0.5,0))
 axis(2, line = -0.45, mgp = c(1,0.5,0))
 mtext("Frequency", 2, 1.5)
 mtext("Energy (J/kg)",1,1.5)
-text(40, 10, "C")
+text(90, 15, "C")
 par(mar = c(2.5,2.5,0,1))
 hist(df$energy.diff_90, main="", xlab = "", ylab = "",
-     ylim = c(0,10),xlim = c(-80,50), axes = FALSE)
+     ylim = c(0,10),xlim = c(-250,100), axes = FALSE)
 axis(1, line = -0.3, mgp = c(1,0.5,0))
 axis(2, line = -0.45)
 mtext("Energy (J/kg)",1,1.5)
-text(40, 10, "D")
+text(90, 15, "D")
 
 dev.off()
 
@@ -81,16 +81,16 @@ stroke<-data.frame(predictions[c(1,27:32)],
 stroke<-stroke[complete.cases(stroke),]
 
 ##calculate "actual" amount of energy expended over a dive
-predictions$energy_actual <- predictions$stroke_rate*3.8
+predictions$energy_actual <- predictions$stroke_rate*7.9
 
 predictions$stroke_freq <- predictions$stroke_rate/predictions$swim.secs
 
 #calculate predicted energy expended
-predictions$energy_3sec_10 <- predictions$peak_3sec_10_dyn.x*3.8
-predictions$energy_3sec_20 <- predictions$peak_3sec_20_dyn.x*3.8
-predictions$energy_3sec_30 <- predictions$peak_3sec_30_dyn.x*3.8
-predictions$energy_3sec_40 <- predictions$peak_3sec_40_dyn.x*3.8
-predictions$energy_3sec_50 <- predictions$peak_3sec_50_dyn.x*3.8
+predictions$energy_3sec_10 <- predictions$peak_3sec_10_dyn.x*7.9
+predictions$energy_3sec_20 <- predictions$peak_3sec_20_dyn.x*7.9
+predictions$energy_3sec_30 <- predictions$peak_3sec_30_dyn.x*7.9
+predictions$energy_3sec_40 <- predictions$peak_3sec_40_dyn.x*7.9
+predictions$energy_3sec_50 <- predictions$peak_3sec_50_dyn.x*7.9
 
 predictions$energy_diff_10 <- predictions$energy_actual - predictions$energy_3sec_10
 predictions$energy_diff_20 <- predictions$energy_actual - predictions$energy_3sec_20
@@ -99,7 +99,9 @@ predictions$energy_diff_40 <- predictions$energy_actual - predictions$energy_3se
 predictions$energy_diff_50 <- predictions$energy_actual - predictions$energy_3sec_50
 
 
-h.plot<-hist(predictions$energy_diff_50)
+h.plot<-hist(predictions$energy_diff_20)
+
+predictions <- predictions[!predictions$stroke_rate==0,]
 
 
 tiff("figs/tape/energy_dist_tape.tiff", width = 140, height = 90, units = 'mm',
@@ -107,29 +109,29 @@ tiff("figs/tape/energy_dist_tape.tiff", width = 140, height = 90, units = 'mm',
 
 par(mfrow = c(2,2),mar = c(1,3.5,1,1))
 hist(predictions$energy_diff_20, main="", xlab = "", ylab = "",
-     axes = FALSE, ylim = c(0,55),xlim = c(-350,100))
+     axes = FALSE, ylim = c(0,30),xlim = c(-400,200), breaks = 9)
 axis(2, line = -0.45,cex.axis = 1, mgp = c(1,0.5,0))
 mtext("Frequency", 2, 1.5)
-text(100, 50, "A")
+text(100, 30, "A")
 par(mar = c(1,2.5,1,1))
 hist(predictions$energy_diff_30, main="", xlab = "", ylab = "",
-     axes = FALSE, ylim = c(0,55),xlim = c(-350,100))
+     axes = FALSE, ylim = c(0,30),xlim = c(-400,200), breaks = 9)
 axis(2, line = -0.45, cex.axis = 1, mgp = c(1,0.5,0))
-text(100, 50, "B")
+text(100, 30, "B")
 par(mar = c(2.5,3.5,0,1))
 hist(predictions$energy_diff_40, main="", xlab = "", ylab = "",
-     xlim = c(-350,100), ylim = c(0,55), axes = FALSE)
+     ylim = c(0,30),xlim = c(-400,200), axes = FALSE, breaks = 9)
 axis(1, line = -0.2, mgp = c(1,0.5,0))
 axis(2, line = -0.45, mgp = c(1,0.5,0))
 mtext("Frequency", 2, 1.5)
 mtext("Energy (J/kg)",1,1.5)
-text(100, 50, "C")
+text(100, 30, "C")
 par(mar = c(2.5,2.5,0,1))
 hist(predictions$energy_diff_50, main="", xlab = "", ylab = "",
-     xlim = c(-350,100), ylim = c(0,55), axes = FALSE)
+     ylim = c(0,30),xlim = c(-400,200), axes = FALSE, breaks = 9)
 axis(1, line = -0.2, mgp = c(1,0.5,0))
 axis(2, line = -0.45)
 mtext("Energy (J/kg)",1,1.5)
-text(100, 50, "D")
+text(100, 30, "D")
 
 dev.off()
